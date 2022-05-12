@@ -32,7 +32,11 @@
         <Button Grid.Row="2" Grid.Column="0" Text="Save" Margin="10,0" Command="{Binding SaveCommand}" BackgroundColor="Green" TextColor="White"/>
         <Button Grid.Row="2" Grid.Column="1" Text="Erase" Command="{Binding EraseCommand}" BackgroundColor="Red" TextColor="White"/>
 
-        <CollectionView ItemsSource="{Binding AllNotes}" Grid.Row="3" Grid.ColumnSpan="2">
+        <CollectionView Grid.Row="3" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding AllNotes}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedNote}"
+                        SelectionChangedCommand="{Binding SelectedNoteChangedCommand}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout>
